@@ -1,17 +1,18 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { SaudacaoComponent } from './saudacao/saudacao.component';
-import { RodapeComponent } from './rodape/rodape.component';
-import { InteratividadeComponent } from './interatividade/interatividade.component';
-
+import { CommonModule } from '@angular/common'; // Importando o CommonModule
 
 @Component({
   selector: 'app-root',
-  standalone: true,
+  standalone: true, // Isso indica que o componente é standalone
+  imports: [CommonModule], // Aqui importamos explicitamente o CommonModule
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
-  imports: [SaudacaoComponent, RodapeComponent, RouterOutlet, InteratividadeComponent],
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'meu-primeiro-projeto';
+  mostrarTexto = false; // Variável para controlar a exibição do texto
+  corTexto = 'blue';
+
+  trocarCor() {
+    this.corTexto = this.corTexto === 'blue' ? 'green' : 'blue';
+  }
 }

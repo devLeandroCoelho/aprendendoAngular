@@ -1,3 +1,6 @@
-<app-saudacao></app-saudacao>
-<app-interatividade></app-interatividade>
-<app-rodape></app-rodape>
+<button (click)="mostrarTexto = !mostrarTexto">Alternar Texto</button>
+<p>Valor de mostrarTexto: {{ mostrarTexto }}</p>
+<div *ngIf="mostrarTexto">Esse texto aparece e desaparece em uma 'div'!</div>
+
+<button (click)="trocarCor()">Trocar Cor</button>
+<p [style.color]="corTexto">Texto com cor dinâmica</p>
